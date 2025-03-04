@@ -57,48 +57,6 @@
 #### `2024.12.13 ~ 2025.2.28 (3개월)
 <br>
 
-## 🏃 팀원 소개
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/acoldbottle">김병찬</a></td>
-    <td align="center"><a href="https://github.com/moonnamkyung">문남경</td>
-    <td align="center"><a href="https://github.com/florence1920">이승헌</a></td>
-    <td align="center"><a href="https://github.com/rough78">임용태</a></td>
-    <td align="center"><a href="https://github.com/leejuyeon-star">이주연</a></td>
-  </tr>
-  <tr>
-    <td align="center">Backend</td>
-    <td align="center">UI/UX Design</td>
-    <td align="center">Frontend</td>
-    <td align="center">Frontend</td>
-    <td align="center">Backend</td>
-  </tr>
-  <tr>
-    <td align="center">kimbc715@gmail.com</td>
-    <td align="center">luna7252@naver.com</td>
-    <td align="center">jetaime21212@gmail.com</td>
-    <td align="center">lim7897@gmail.com</td>
-    <td align="center">kkobucks@naver.com</td>
-  </tr>
-  <tr>
-    <td align="center">
-	<img src="https://raw.githubusercontent.com/cafeLogProject/README/main/image/profile/byoungchan.png" alt="chan" width="100">    
-    </td>
-    <td align="center">
-	    <img src="https://raw.githubusercontent.com/cafeLogProject/README/main/image/profile/moon.png" alt="moon" width="100">    
-    </td>
-    <td align="center">
-        <img src="https://raw.githubusercontent.com/cafeLogProject/README/main/image/profile/leeseungheon.jpg" width="100" alt="lsh"/>  
-    </td>
-    <td align="center">
-        <img src="https://raw.githubusercontent.com/cafeLogProject/README/refs/heads/main/image/profile/limyongtae.jpg" width="100" alt="yongtae"/>  
-    </td>
-    <td align="center">
-      <img src="https://raw.githubusercontent.com/cafeLogProject/README/main/image/profile/leejuyeon.jpg" alt="juyeon" width="100">
-    </td>
-  </tr>
-</table>
-
 <br>
 
 ## 🔍 주요 기능
@@ -318,58 +276,55 @@
 ## 🧩 핵심 기술 요소
 
 ### 커서 기반 무한 스크롤
-팔로워/팔로잉 리스트, 리뷰 목록 등에 useInfiniteQuery를 활용한 커서 기반 무한 스크롤을 구현하여 사용자 경험을 개선했습니다. 탭 전환 시 데이터 초기화 및 스크롤 위치 관리를 통해 자연스러운 UX를 제공합니다.
-
-### 프로필 검색 및 팔로우 시스템
-닉네임 기반으로 사용자를 검색하고, 팔로우/언팔로우할 수 있는 기능을 구현했습니다. 팔로잉 중인 사용자의 리뷰만 모아볼 수 있는 전용 탭을 제공하여 소셜 기능을 강화했습니다.
+팔로워/팔로잉 리스트, 리뷰 목록에 useInfiniteQuery를 활용한 커서 기반 무한 스크롤을 구현하여 사용자 경험을 개선했습니다.
 
 ### 리뷰 임시저장 시스템
-리뷰 작성 중 페이지를 이탈하더라도 자동으로 임시저장되어 나중에 이어서 작성할 수 있는 기능을 개발했습니다. 백엔드와의 실시간 연동으로 데이터 손실을 방지하고, 임시저장된 리뷰 목록을 관리할 수 있습니다.
+리뷰 작성 중 임시저장하는 기능을 구현하여 데이터 손실을 방지할 수 있도록 구현했습니다.
 
 ### 이미지 관리 시스템
 사용자가 업로드한 이미지들을 압축하여 저장하고, 조회시 등록순으로 정렬하여 표시하는 기능을 구현했습니다.
-
-### 토스트 알림 시스템
-API 요청 성공/실패 시 사용자에게 직관적인 피드백을 제공하는 토스트 알림 시스템을 구현하여 사용자 경험을 향상시켰습니다.
+if-modified-since 헤더 이용한 이미지 캐싱을 통해 이미지 조회 속도를 개선했습니다.
 
 ### Suspense와 ErrorBoundary를 활용한 로딩/에러 처리
 React의 Suspense와 ErrorBoundary를 활용하여 로딩 및 에러 상태를 효과적으로 관리했습니다. 로딩 중에는 스피너를, 데이터가 없는 경우에는 맞춤형 대체 화면을 표시하여 사용자 경험을 개선했습니다.
+예측 가능한 에러의 경우 토스트 알림을 표시하여 사용자 경험을 향상시켰습니다.
 
 ### 리뷰 필터링 조회
-리뷰를 태그로 필터링하고 최신순/별점순으로 정렬하여 조회하는 기능을 구현했습니다.
+리뷰를 태그로 필터링하고 최신순/별점순으로 정렬 조회하는 기능을 구현하여 사용자 편의를 개선했습니다.
 
 
-## 🌟 주요 기능 구현
-- [이주연]
-  	- 리뷰 관련 기능
-  	  	- QueryDsl를 사용한 조회 구현
-  	   		- 리뷰 최신순/별점순 조회
-			- 리뷰 태그 필터링 조회
-  	  		- 카페의 모든 리뷰 조회
-  	   		- 내 모든 리뷰 조회
-		- 리뷰 CRUD
-  	- 리뷰 임시저장 관련 기능
-  	  	- 내 임시저장 조회
- 		- 임시저장 CRUD
-	- 이미지 관련 기능
-   		- if-modified-since 헤더 이용한 이미지 캐싱 사용
- 		- 리뷰 이미지 CRUD
-		- 임시저장 리뷰 이미지 CRUD
-		- 프로필 이미지 CRUD
-	- 유저페이지 관련 기능
-   	  	- useInfiniteQuery를 이용한 무한 스크롤 구현
-   	- 로딩/에러 관련 기능
-   	  	- Suspense를 이용한 로딩 처리
-   	  	- ErrorBoundary를 이용한 공통 에러 페이지 처리
-   	  	- useQuery를 사용하여 예측가능한 에러 토스트 처리
+## 🌟 핵심 기술 구현
+[이주연-백엔드]
+- 리뷰 관련 기능
+	- QueryDsl를 사용한 조회 구현
+		- 리뷰 최신순/별점순 조회
+		- 리뷰 태그 필터링 조회
+		- 카페의 모든 리뷰 조회
+		- 내 모든 리뷰 조회
+	- 리뷰 CRUD
+- 리뷰 임시저장 관련 기능
+	- 내 임시저장 조회
+	- 임시저장 CRUD
+- 이미지 관련 기능
+	- if-modified-since 헤더 이용한 이미지 캐싱 사용
+	- 리뷰 이미지 CRUD
+	- 임시저장 리뷰 이미지 CRUD
+	- 프로필 이미지 CRUD
+
+[이주연-프론트]
+- 유저페이지 관련 기능
+	- useInfiniteQuery를 이용한 무한 스크롤 구현
+- 로딩/에러 관련 기능
+	- Suspense를 이용한 로딩 처리
+	- ErrorBoundary를 이용한 공통 에러 페이지 처리
+	- useQuery를 사용하여 예측가능한 에러 토스트 처리
 
 
 <br>
 
 ## ⚽ 트러블 슈팅
 
-<details>
-<summary> 이주연 </summary>
+[이주연-백엔드]
 <details>
 <summary>Collection 타입 조회/저장시 쿼리 다수 호출 문제 해결 (N+1 문제)</summary>
 <br>
